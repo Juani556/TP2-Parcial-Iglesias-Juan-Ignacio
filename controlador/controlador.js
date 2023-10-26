@@ -12,19 +12,19 @@ class Controlador {
     }
     
     obtenerNumeros = async (req, res) => {
-        return await this.service.obtenerNumeros()
+        res.json(await this.service.obtenerNumeros()) 
     }
 
     obtenerPromedio = async (req, res) => {
-        return await this.service.obtenerPromedio()
+        res.json(await this.service.obtenerPromedio())
     }
 
     obtenerMinMax = async (req, res) => {
-        return await this.service.obtenerMinMax()
+        res.json(await this.service.obtenerMinMax())
     }
 
     obtenerCantidad = async (req, res) => {
-        return await this.service.obtenerCantidad()
+        res.json(await this.service.obtenerCantidad())
     }
 
 
