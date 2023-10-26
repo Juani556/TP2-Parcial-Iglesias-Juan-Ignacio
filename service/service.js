@@ -21,7 +21,7 @@ class Service {
         const numeros = await this.model.obtenerNumeros()
 
         return {
-            promedio: numeros.reduce((acum, numero) => acum + numero, 0) / numeros.length
+            promedio: (numeros.reduce((acum, numero) => acum + numero, 0) / numeros.length).toFixed(2)
         }
 
     }
