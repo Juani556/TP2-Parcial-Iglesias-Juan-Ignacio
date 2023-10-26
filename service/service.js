@@ -20,6 +20,12 @@ class Service {
         
         const numeros = await this.model.obtenerNumeros()
 
+        if (numeros.length < 1) {
+            return {
+                mensaje: "No hay numeros ingresados"
+            }
+        }
+
         return {
             promedio: (numeros.reduce((acum, numero) => acum + numero, 0) / numeros.length).toFixed(2)
         }
@@ -29,6 +35,12 @@ class Service {
     obtenerMinMax = async () => {
 
         const numeros = await this.model.obtenerNumeros()
+
+        if (numeros.length < 1) {
+            return {
+                mensaje: "No hay numeros ingresados"
+            }
+        }
 
         return {
             min: numeros.reduce((ant, actual) => Math.min(ant, actual)),
